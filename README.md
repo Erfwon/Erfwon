@@ -1,3 +1,3 @@
-nullPos = thisComp.layer("Magnet").transform.position;  
-p = fromComp(nullPos);  
-[p[0], p[1]]
+nullPos = thisComp.layer("Magnet").toComp([0, 0]);  
+[x, y] = nullPos;  
+[x, y]
