@@ -1,0 +1,45 @@
+expression heart movement:
+amp = effect("Amplitude")("Slider"); // شدت ضربان
+freq = effect("Frequency")("Slider"); // سرعت ضربان
+baseSize = [100, 100]; // اندازه پایه
+scaleValue = amp * Math.sin(time * freq * Math.PI * 2) + amp + baseSize[0];
+
+[scaleValue, scaleValue]; // اعمال روی X و Y
+
+
+.....
+
+
+amp = effect("Amplitude")("Slider");  
+freq = effect("Frequency")("Slider");  
+baseSize = [100, 100];  
+
+scaleValue = wiggle(freq, amp);  
+
+[scaleValue[0], scaleValue[0]];
+
+
+
+....
+
+
+
+amp = effect("Amplitude")("Slider");  // شدت ضربان
+freq = effect("Frequency")("Slider"); // سرعت ضربان
+wiggleAmount = effect("Wiggle Intensity")("Slider"); // شدت تصادفی بودن
+
+baseSize = [100, 100];  // اندازه پایه
+
+// ضربان اصلی با sin()
+sinValue = amp * Math.sin(time * freq * Math.PI * 2) + amp;
+
+// کمی نویز طبیعی با wiggle()
+wiggleValue = wiggle(freq, wiggleAmount)[0];
+
+// ترکیب sin و wiggle
+finalScale = baseSize[0] + sinValue + wiggleValue;
+
+[finalScale, finalScale];
+
+
+....
